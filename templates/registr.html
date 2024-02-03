@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Регистрация</title>
+    <style>
+        body{
+            margin: 0px;
+            background: url("https://static.1000.menu/img/content-v2/b2/2c/64072/oladi-pyshnye-na-moloke-s-yaicom_1649914798_prev_hor.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+
+        }
+        .header{
+
+        height:70px;
+        background: linear-gradient(rgb(230, 211, 138), black);
+        border-radius: 0 10px;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+        }
+        h1{
+        margin-left:500px;
+        }
+        a{
+        margin-left:600px;
+        }
+     p, b, h4{
+        padding: 10px;
+        color:white;
+        text-shadow: 2px 2px red;
+        font-size: 25px;
+     }
+     a{
+     text-decoration:none;
+     color:orange
+     }
+     a:hover {
+     background:blue;
+    }
+
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Регистрация</h1>
+
+
+    </div>
+<div class="registr">
+    <form action="add_user" method="post">
+        <div class="name-box">
+        <p class="input-group-text">Введите ваше имя и фамилию:</p>
+            <input type="text"  placeholder="Василий" name="name">
+            <input type="text"  placeholder="Петренко" name="surname">
+        </div>
+        <div class="email-box">
+            <p class="input-group-text">Введите вашу электронную почту:</p>
+            <input type="email"  placeholder="example@gmail.com" name="email">
+        </div>
+        <div class="username-box">
+            <p class="input-group-text">Придумайте логин:</p>
+            <input type="text"  placeholder="Artyom_top22" name="username">
+        </div>
+        <div class="password-box">
+            <p class="input-group-text">Введите пароль:</p>
+            <input type="password" name="password">
+            <p class="input-group-text">Повторите пароль:</p>
+            <input type="password" name="password_repeat">
+        </div>
+        <div class="credit-box">
+            <p class="input-group-text">Введите номер карты:</p>
+            <input type="text" name=number" placeholder="xxxx xxxx xxxx xxxx">
+            <p class="input-group-text">Введите срок действия карты:</p>
+            <input type="text" name="srok" placeholder="xx/xx">
+            <p class="input-group-text">Введите CVV2:</p>
+            <input type="text" name="CVV2" placeholder="xxx">
+
+        </div>
+        <br>
+        <button type="submit">К покупкам!</button>
+        <br>
+    </form>
+</div>
+</body>
+</html>
