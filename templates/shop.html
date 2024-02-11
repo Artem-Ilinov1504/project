@@ -2,9 +2,153 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Выпечка</title>
+    <style>
+        body{
+            margin: 0px;
+
+
+        }
+        .header{
+
+        height:70px;
+        background: linear-gradient(rgb(230, 211, 138), black);
+        border-radius: 0 10px;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+        }
+        h2{
+        margin-left:600px;
+        }
+        a{
+        margin-left:600px;
+        }
+     p, b, h4{
+        padding: 10px;
+        color:black;
+        text-shadow: 1px 1px red;
+        font-size: 15px;
+    }
+    .cards{
+     display: flex;
+    justify-content: space-between;
+
+    margin-top: 30px;
+
+    width: 90%;
+    }
+
+    .first-card {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    border: 1px solid #afafaf;
+    border-radius: 30px;
+    margin-left: 25px;
+    width: 370px;
+    height: 500px;
+
+    -webkit-box-shadow: 5px 5px 15px -5px rgba(34, 60, 80, 0.6);
+    -moz-box-shadow: 5px 5px 15px -5px rgba(34, 60, 80, 0.6);
+    box-shadow: 5px 5px 15px -5px rgba(34, 60, 80, 0.6);
+   }
+
+   .second-card {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    border: 1px solid #afafaf;
+    border-radius: 30px;
+    margin-left: 425px;
+    margin-top:-500px;
+    width: 370px;
+    height: 500px;
+
+    -webkit-box-shadow: 5px 5px 15px -5px rgba(34, 60, 80, 0.6);
+    -moz-box-shadow: 5px 5px 15px -5px rgba(34, 60, 80, 0.6);
+    box-shadow: 5px 5px 15px -5px rgba(34, 60, 80, 0.6);
+   }
+   .third-card {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    border: 1px solid #afafaf;
+    border-radius: 30px;
+    margin-left: 825px;
+    margin-top:-500px;
+    width: 370px;
+    height: 500px;
+
+    -webkit-box-shadow: 5px 5px 15px -5px rgba(34, 60, 80, 0.6);
+    -moz-box-shadow: 5px 5px 15px -5px rgba(34, 60, 80, 0.6);
+    box-shadow: 5px 5px 15px -5px rgba(34, 60, 80, 0.6);
+   }
+   img{
+   margin-top:10px
+   }
+    </style>
 </head>
 <body>
+
+    <div class="header">
+        <h2>Shop</h2>
+     </div>
+
+<form method="post">
+
+ <div class="first-card">
+     <div class="img">
+         <img src="https://images.unian.net/photos/2021_02/thumb_files/800_0_1613373909-9812.jpg?0.854577553874855" width="300px">
+     </div>
+     <div class="price">
+         <p>Сырники</p>
+        <p>Цена: 20 грн/шт.</p>
+     </div>
+     <div class="form">
+         <p>Введите количество</p>
+         <input type="number" id="pancake" name="pancake">
+     </div>
+ </div>
+<div class="second-card">
+     <div class="img">
+         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTI0zVc_PWhpw0kxQEhIGQHTodzo6bwn_L1FQ&usqp=CAU" width="300px">
+     </div>
+     <div class="price">
+         <p>Блины</p>
+        <p>Цена: 30 грн/шт.</p>
+     </div>
+     <div class="form">
+         <p>Введите количество</p>
+         <input type="number"  name="slapjack" id="slapjack">
+     </div>
+ </div>
+<div class="third-card">
+     <div class="img">
+         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSX6NiynrK42tLW0FafkA9-EGtSa_4YLYzQ5w&usqp=CAU" width="300px">
+     </div>
+     <div class="price">
+         <p>Пряники</p>
+        <p>Цена: 10 грн/шт.</p>
+     </div>
+     <div class="form">
+         <p>Введите количество</p>
+         <input type="number"  name="gingerbread" id="gingerbread">
+     </div>
+ </div>
+
+    <button type="submit">Подтвердить</button>
+</form>
+
+        {% if cost %}
+            <p class="resultbox">К оплате: <span>{{cost}}</span> грн.</p>
+            <form action="bye">
+                <button type="submit">Оплатить</button>
+               Оплачено. Спасибо!
+
+                </form>
+        {% endif %}
 
 </body>
 </html>
