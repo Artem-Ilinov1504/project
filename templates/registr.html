@@ -6,41 +6,50 @@
     <style>
         body{
             margin: 0px;
-            background: url("https://static.1000.menu/img/content-v2/b2/2c/64072/oladi-pyshnye-na-moloke-s-yaicom_1649914798_prev_hor.jpg");
+            background-image: url("https://static.1000.menu/img/content-v2/b2/2c/64072/oladi-pyshnye-na-moloke-s-yaicom_1649914798_prev_hor.jpg");
             background-repeat: no-repeat;
             background-size: cover;
 
         }
         .header{
-
-        height:70px;
-        background: linear-gradient(rgb(230, 211, 138), black);
-        border-radius: 0 10px;
-        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+            height:70px;
+            background: linear-gradient(rgb(230, 211, 138), black);
+            border-radius: 0 10px;
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
         }
         h1{
-        margin-left:500px;
+            margin-left:500px;
         }
         a{
         margin-left:600px;
         }
-     p, b, h4{
-        padding: 10px;
-        color:white;
-        text-shadow: 2px 2px red;
-        font-size: 25px;
-     }
-     a{
-     text-decoration:none;
-     color:orange
-     }
-     a:hover {
-     background:blue;
-    }
-
+        p, b, h4{
+            padding: 10px;
+            color:white;
+            text-shadow: 2px 2px red;
+            font-size: 25px;
+        }
+        a{
+            text-decoration:none;
+            color:orange
+        }
+        a:hover {
+            background:blue;
+        }
+        .filter{
+        position:absolute;
+        height:  182.5vh;
+        width: 100%;
+        background: rgba(0,0,0,0.7);
+        z-index: -1;
+        }
+        form{
+         word-spacing: 0.1px;
+        }
     </style>
 </head>
 <body>
+<div class="filter"></div>
     <div class="header">
         <h1>Регистрация</h1>
 
@@ -69,17 +78,18 @@
         </div>
         <div class="credit-box">
             <p class="input-group-text">Введите номер карты:</p>
-            <input type="text" name=number" placeholder="xxxx xxxx xxxx xxxx">
+            <input type="text" name=num_card" placeholder="xxxx xxxx xxxx xxxx">
             <p class="input-group-text">Введите срок действия карты:</p>
             <input type="text" name="srok" placeholder="xx/xx">
             <p class="input-group-text">Введите CVV2:</p>
-            <input type="text" name="CVV2" placeholder="xxx">
+            <input type="text" name="CVV" placeholder="xxx">
 
         </div>
         <br>
         <button type="submit">К покупкам!</button>
         <br>
     </form>
+<a href="http://127.0.0.1:5000/shop">Магазин</a>
 </div>
 </body>
 </html>
