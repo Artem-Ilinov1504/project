@@ -37,10 +37,17 @@
      a:hover {
      background:blue;
     }
-
+        .filter{
+        position:absolute;
+        height:  108.5vh;
+        width: 100%;
+        background: rgba(0,0,0,0.7);
+        z-index: -1;
+        }
     </style>
 </head>
 <body>
+<div class="filter"></div>
     <div class="header">
         <h3>Добро пожаловать на наш сайт!</h3> <a href="http://127.0.0.1:5000/registration">Регистрация</a>
 
@@ -54,6 +61,17 @@
      <p>Около <b>9500</b> положительных отзывов.</p>
      <p>Опыт работы <b>10</b> лет.</p>
      <h4>Но чтобы продолжить, необходимо зарегестрироваться и привязать карту!</h4>
+
  </div>
+    {% if users %}
+        <h1>К нам присоединились:</h1>
+        <ul>
+            {% for user in users %}
+                <li>{{user.username}} {{user.email}}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+</body>
+</html>
 </body>
 </html>
