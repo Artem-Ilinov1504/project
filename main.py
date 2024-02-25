@@ -1,10 +1,11 @@
-from flask import Flask, render_template, request, redirect, send_file
+from flask import Flask, render_template, request, redirect
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///users.db"
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
+
 
 
 class User(db.Model):
@@ -15,14 +16,15 @@ class User(db.Model):
     email = db.Column(db.String(120), nullable=False)
     username = db.Column(db.String(50), nullable=False)
     password = db.Column(db.String(40), nullable=False)
-
+    num_card = db.Column(db.Integer, nullable=False)
+    srok = db.Column(db.Integer, nullable=False)
+    CVV = db.Column(db.Integer, nullable=False)
 
 @app.route("/")
 def index():
     users = User.query.all()
     print(users)
     return render_template("index.html", users=users)
-
 
 @app.route("/add_user", methods=["POST"])
 def add_user():
@@ -31,29 +33,42 @@ def add_user():
     email = request.form["email"]
     username = request.form["username"]
     password = request.form["password"]
+    num_card = request.form["num_card"]
+    srok = request.form["srok"]
+    CVV = request.form["CVV"]
     new_user = User(
         name=name,
         surname=surname,
         email=email,
         username=username,
-        password=password
+        password=password,
+        num_card=num_card,
+        srok=srok,
+        CVV=CVV,
     )
     db.session.add(new_user)
     db.session.commit()
     return redirect("/")
 
 
+
 @app.route("/registration")
 def registration():
+
     return render_template("registr.html")
 
+
 @app.route("/shop", methods=["GET", "POST"])
-def recombination():
+def shop():
+
     cost = None
     foos = {
         "pancake": 20,
         "slapjack":30,
         "gingerbread":10,
+        "zapecanka":75,
+        "pancake2":40,
+        "verguns":30,
     }
     values_list = list(foos.values())
     keys_list = list(foos.keys())
@@ -65,12 +80,16 @@ def recombination():
             try:
                 pancake = int(request.form.get(f"{keys_list[0]}", ""))
             except:
-                return '<a href="http://127.0.0.1:5000/shop">cсылка на магазин</a>'
+                return '<a href="http://127.0.0.1:5000/shop">Посилання на магазин</a>'
             res = values_list[i] * pancake
             sums.append(res)
         cost = sum(sums)
 
     return render_template("shop.html", cost=cost)
+
+@app.route("/goodbye")
+def goodbye():
+    return '<p>Оплачено. Дякую</p>'
 
 if __name__ == "__main__":
     with app.app_context():
